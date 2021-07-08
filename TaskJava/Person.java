@@ -1,7 +1,6 @@
 package TaskJava;
 
 import java.util.Calendar;
-import java.util.Date;
 
 public class Person {
     private String firstName;
@@ -12,6 +11,7 @@ public class Person {
     Calendar calendarPack = Calendar.getInstance();
     private int currentYear = calendarPack.get(Calendar.YEAR);
 
+    // Set constructor
     public Person(String firstN, String lastN, int i) {
         firstName = firstN;
         lastName = lastN;
@@ -22,6 +22,7 @@ public class Person {
         System.out.println("<<<<<<<<<<<<<<< Person Details >>>>>>>>>>>>>>> ");
         System.out.println("Name: " + firstName + " " + lastName);
         System.out.println("Address: " + address);
+        // Count age
         System.out.println("Age: " + (currentYear - yearOfBirth));
         // System.out.println(currentYear);
     }
