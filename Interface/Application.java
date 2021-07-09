@@ -33,7 +33,7 @@ public class Application {
         }
         System.out.println("Draw geometry again?");
         System.out.println("Click 1 : to draw again");
-        System.out.println("Click 2 : to draw again");
+        System.out.println("Click 2 : to exit program");
         System.out.print("Your Choice : ");
         menuChoice = input.nextInt();
         if (menuChoice == 1) {
