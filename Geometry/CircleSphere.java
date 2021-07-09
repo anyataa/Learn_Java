@@ -20,7 +20,7 @@ public class CircleSphere extends Circle {
     }
 
     public float countVolume() {
-        return super.countArea() * radius * 4 / 3;
+        return super.countArea() * getRadius() * 4 / 3;
     }
 
 }

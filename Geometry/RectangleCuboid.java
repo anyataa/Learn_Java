@@ -13,7 +13,7 @@ public class RectangleCuboid extends Rectangle {
     public float countArea() {
         // TODO Auto-generated method stub
         // how if all size is different
-        return (2 * length * width) + (2 * length * height) + (2 * width * height);
+        return (2 * getLength() * getWidth()) + (2 * getLength() * height) + (2 * getWidth() * height);
     }
 
     @Override

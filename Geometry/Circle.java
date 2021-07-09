@@ -1,7 +1,15 @@
 package Geometry;
 
 public class Circle {
-    public float radius;
+    private float radius;
+
+    public float getRadius() {
+        return radius;
+    }
+
+    public void setRadius(float radius) {
+        this.radius = radius;
+    }
 
     public float countCircum() {
         return 22 * radius / 7 * 2;

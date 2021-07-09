@@ -12,13 +12,13 @@ public class TrianglePrism extends Triangle {
     @Override
     public float countArea() {
         // TODO Auto-generated method stub
-        return super.countArea() * 2 + prismheight * height * 2 + prismheight * base * 2;
+        return super.countArea() * 2 + prismheight * getHeight() * 2 + prismheight * getBase() * 2;
     }
 
     @Override
     public float countCircum() {
         // TODO Auto-generated method stub
-        return (super.countCircum() * 2) + (3 * height);
+        return (super.countCircum() * 2) + (3 * getHeight());
     }
 
     public float countVolume() {
