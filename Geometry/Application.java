@@ -21,11 +21,7 @@ public class Application {
         System.out.println("Prism Height :");
         in3 = input1.nextFloat();
         System.out.println("---------------------------------");
-        // float[] prismInput = new float[3];
-        // prismInput[0] = in1;
-        // prismInput[1] = in2;
-        // prismInput[2] = in3;
-        // return prismInput;
+
     }
 
     public void InputCuboid() {
@@ -62,38 +58,17 @@ public class Application {
         switch (geometryChoice) {
         case 4:
             if (this.threeDimension == 1) {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Base :");
-                // in2 = input1.nextFloat();
-                // System.out.println("Prism Height :");
-                // in3 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputPrism();
                 System.out.println("The Area : ");
                 System.out.println(new TrianglePrism(in2, in1, in3).countArea());
                 break;
 
             } else if (this.threeDimension == 2) {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Base :");
-                // in2 = input1.nextFloat();
-                // System.out.println("Prism Height :");
-                // in3 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputPrism();
                 System.out.println("The Circumference : ");
                 System.out.println(new TrianglePrism(in2, in1, in3).countCircum());
                 break;
             } else {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Base :");
-                // in2 = input1.nextFloat();
-                // System.out.println("Prism Height :");
-                // in3 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputPrism();
                 System.out.println("The Volume : ");
                 System.out.println(new TrianglePrism(in2, in1, in3).countVolume());
@@ -103,38 +78,17 @@ public class Application {
         case 5:
 
             if (this.threeDimension == 1) {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Base :");
-                // in2 = input1.nextFloat();
-                // System.out.println("Cuboid Height :");
-                // in3 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputCuboid();
                 System.out.println("The Area : ");
                 System.out.println(new RectangleCuboid(in2, in1, in3).countArea());
                 break;
 
             } else if (this.threeDimension == 2) {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Base :");
-                // in2 = input1.nextFloat();
-                // System.out.println("Cuboid Height :");
-                // in3 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputCuboid();
                 System.out.println("The Circumference : ");
                 System.out.println(new RectangleCuboid(in2, in1, in3).countCircum());
                 break;
             } else {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Base :");
-                // in2 = input1.nextFloat();
-                // System.out.println("Cuboid Height :");
-                // in3 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputCuboid();
                 System.out.println("The Volume : ");
                 System.out.println(new RectangleCuboid(in2, in1, in3).countVolume());
@@ -144,26 +98,17 @@ public class Application {
         case 6:
 
             if (this.threeDimension == 1) {
-                // System.out.println("Input Radius:");
-                // in1 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputRadius();
                 System.out.println("The Area : ");
                 System.out.println(new CircleSphere(in1).countArea());
                 break;
 
             } else if (this.threeDimension == 2) {
-                // System.out.println("Input Radius:");
-                // in1 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputRadius();
                 System.out.println("The Circumference : ");
                 System.out.println(new CircleSphere(in1).countCircum());
                 break;
             } else {
-                // System.out.println("Input Radius:");
-                // in1 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputRadius();
                 System.out.println("The Volume : ");
                 System.out.println(new CircleSphere(in1).countVolume());
@@ -193,22 +138,12 @@ public class Application {
         switch (geometryChoice) {
         case 1:
             if (this.twoDimension == 1) {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Base :");
-                // in2 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputRectangleAndTriangle();
                 System.out.println("The Area : ");
                 System.out.println(new Triangle(in1, in2).countArea());
                 break;
 
             } else {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Base :");
-                // in2 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputRectangleAndTriangle();
                 System.out.println("The Circumference : ");
                 System.out.println(new Triangle(in1, in2).countCircum());
@@ -217,22 +152,12 @@ public class Application {
 
         case 2:
             if (this.twoDimension == 1) {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Width :");
-                // in2 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputRectangleAndTriangle();
                 System.out.println("The Area : ");
                 System.out.println(new Rectangle(in1, in2).countArea());
                 break;
 
             } else {
-                // System.out.println("Input Height :");
-                // in1 = input1.nextFloat();
-                // System.out.println("Input Width :");
-                // in2 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputRectangleAndTriangle();
                 System.out.println("The Circumference : ");
                 System.out.println(new Rectangle(in1, in2).countCircum());
@@ -241,18 +166,12 @@ public class Application {
 
         case 3:
             if (this.twoDimension == 1) {
-                // System.out.println("Input Radius :");
-                // in1 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputRadius();
                 System.out.println("The Area : ");
                 System.out.println(new Circle(in1).countArea());
                 break;
 
             } else {
-                // System.out.println("Input Radius :");
-                // in1 = input1.nextFloat();
-                // System.out.println("---------------------------------");
                 InputRadius();
                 System.out.println("The Circumference : ");
                 System.out.println(new Circle(in1).countCircum());
