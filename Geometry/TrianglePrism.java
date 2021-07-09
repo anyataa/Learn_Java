@@ -22,7 +22,7 @@ public class TrianglePrism extends Triangle {
     }
 
     public float countVolume() {
-        return height * prismheight * base;
+        return super.countArea() * prismheight;
     }
 
 }

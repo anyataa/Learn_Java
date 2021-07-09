@@ -11,6 +11,7 @@ public class Triangle {
 
     // Right Triangle
     public float countCircum() {
+        // count hipotenuse with Phytagoras
         return (float) (base + height + Math.sqrt((base * base) + (height * height)));
     }
 
