@@ -69,7 +69,7 @@ public class Application {
                 System.out.println("--------------------------------------");
                 user.countCourseForGraduate(userSks);
                 System.out.println();
-                System.out.println("Total SKS : " + totalSks);
+                System.out.println("Total Course Weight : " + totalSks);
                 userCourseTaken = userCourseTaken + user.inputCourseData(userCourse, userCourseRoom) + " | ";
                 System.out.println(userCourseTaken);
                 System.out.println();

@@ -41,16 +41,6 @@ public class Student extends Person implements College {
 
     }
 
-    // @Override
-    // public void learningPlan(String courseName, Integer sks, String room) {
-
-    // if (sks >= 144) {
-    // System.out.println("Congratulation on your graduation!");
-    // System.out.println(super.getName() + " S.T");
-    // }
-
-    // }
-
     @Override
     public void countCourseForGraduate(Integer sks) {
         // TODO Auto-generated method stub
