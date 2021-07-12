@@ -15,6 +15,7 @@ public class Application {
     Integer totalSks = 0;
     Student user = new Student("", 0, "");
 
+    // 1
     public void handleUserBiodata() {
         System.out.println();
         System.out.println("Please Enter Your Personal Information");
@@ -34,6 +35,7 @@ public class Application {
 
     }
 
+    // 2
     public void handleUserRegistration() {
         handleUserBiodata();
         System.out.println("Apply to college?");
@@ -50,6 +52,7 @@ public class Application {
         System.out.println("Goodbye, Thank you for using Java College Application!");
     }
 
+    // 3
     public void handleCourse() {
         do {
             System.out.println("Input Your Course ?");
@@ -70,7 +73,7 @@ public class Application {
                 user.countCourseForGraduate(userSks);
                 System.out.println();
                 System.out.println("Total Course Weight : " + totalSks);
-                userCourseTaken = userCourseTaken + user.inputCourseData(userCourse, userCourseRoom) + " | ";
+                userCourseTaken = userCourseTaken + " \n " + " - " + user.inputCourseData(userCourse, userCourseRoom);
                 System.out.println(userCourseTaken);
                 System.out.println();
 
@@ -78,7 +81,7 @@ public class Application {
             }
             if (userAnswer == 2) {
                 System.out.println("Close Menu for Inputting Course");
-
+                handleUserBiodata();
             }
         } while (totalSks < 144);
         System.out.println("Congratulation on your graduation!");
@@ -87,7 +90,6 @@ public class Application {
     }
 
     public static void main(String[] args) {
-        Application runProgram = new Application();
-        runProgram.handleUserRegistration();
+        new Application().handleUserRegistration();
     }
 }
