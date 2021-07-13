@@ -29,7 +29,7 @@ public class Application {
     List<Order> orderArray = new ArrayList<>();
     // List<Order> orderArrayDistinct = new ArrayList<>();
 
-    // 7
+    // 5
     public void handlePayment() {
         // Payment
         countOrder();
@@ -59,7 +59,7 @@ public class Application {
 
     }
 
-    // 6
+    // 4
     public void removeItem() {
         Integer current = 1;
         System.out
@@ -80,7 +80,7 @@ public class Application {
 
     }
 
-    // 5
+    // Function
     public void showOrder() {
         for (Order item : orderArray) {
             System.out
@@ -90,7 +90,7 @@ public class Application {
 
     }
 
-    // 4
+    // 3
     public void orderAgain() {
         System.out.println("\n>>>>>>>>>>>>>>> Manage Order <<<<<<<<<<<<<<<<< ");
         System.out.println("[1] Order Again \n[2] Remove Item from Cart \n[3] Cancel Order \n[4] Check Out and Pay");
@@ -116,7 +116,7 @@ public class Application {
 
     }
 
-    // 3
+    // Function
     public void countOrder() {
         totalReceipt = 0D;
         for (Order orderItem : orderArray) {
