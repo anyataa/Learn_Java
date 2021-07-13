@@ -107,6 +107,7 @@ public class Application {
             totalOrderName.clear();
             totalOrderPrice.clear();
             showMenuOption();
+
         }
         if (userAnswer == 4) {
             handlePayment();
@@ -162,10 +163,11 @@ public class Application {
                 orderQuantity = input.nextInt();
                 inputOrder(mealSetArray[orderInput].getMenuName(), mealSetArray[orderInput].getMenuPrice(),
                         orderQuantity);
-                // orderAgain();
-                // break;
 
             case 2:
+                if (userAnswer == 3) {
+                    break;
+                }
                 foodAndBeverageArray = new Menu().returnFoodAndBeverageArray();
                 System.out.println(userAnswer);
                 System.out.print("Order: ");
@@ -183,7 +185,7 @@ public class Application {
             case 3:
                 System.out.println("Thank You! See You Next Time!");
                 runApp = false;
-                // break;
+
             }
 
         } while (runApp);
