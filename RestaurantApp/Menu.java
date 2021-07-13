@@ -27,7 +27,7 @@ public class Menu implements OrderHandler {
         String[] HappyMeal = { "Milo", "Chicken Nuggets (4pcs)", "Finger Bites", "French Fries", "Burger" };
         // Header for Meal Set
         System.out.println();
-        System.out.println("Choose Your Meal Set: ");
+        System.out.println(">>>>>>>>>>>> Choose Your Meal Set <<<<<<<<<<<<< \n");
         // Put Meal Set inside the array
         MealSet[] mealSetArray = { new MealSet("BTS Meal", 49000D, BtsMeal), new MealSet("BFF Meal", 99000D, BffMeal),
                 new MealSet("Happy Meal", 105000D, HappyMeal) };
@@ -51,7 +51,7 @@ public class Menu implements OrderHandler {
         Integer current = 0;
         // Header for Meal Set
         System.out.println();
-        System.out.println("Choose Your Ala Carte Food & Beverage : ");
+        System.out.println(">>>>>>>> Choose Your Ala Carte Food & Beverage <<<<<<<<< \n");
         FoodAndBeverage[] FoodAndBeverageArray = { new FoodAndBeverage("Spicy Chicken", 20000D),
                 new FoodAndBeverage("Nuggets (5pcs)", 19000D), new FoodAndBeverage("Porridge", 15000D),
                 new FoodAndBeverage("Cola", 11000D), new FoodAndBeverage("Milo", 13000D) };
@@ -73,17 +73,21 @@ public class Menu implements OrderHandler {
     }
 
     @Override
-    public void generateReceipt(Double total, Double payment, List<String> orderList) {
+    public void generateReceipt(Double total, Double payment, List<String> orderList, List<Order> orderDetail) {
         // TODO Auto-generated method stub
-        System.out.println("\n\n>>>>>>>>> RECEIPT <<<<<<<<<<<<<\n");
-
-        for (String orderItem : orderList) {
-            System.out.println("-" + orderItem);
+        System.out.println("\n\n>>>>>>>>>>> RECEIPT <<<<<<<<<<<<<\n");
+        System.out.println("\nOrder Item:");
+        for (Order orderItem : orderDetail) {
+            System.out.println("-" + orderItem.getOrderName() + " : " + orderItem.getOrderPrice() + " x"
+                    + orderItem.getOrderQuantity());
         }
 
-        System.out.println("Total : " + numberFormat.format(total));
+        System.out.println("\nTotal Order : " + numberFormat.format(total));
+        System.out.println("Tax ( 10% ) : " + numberFormat.format(total * 0.1));
+        System.out.println("Total Payment : " + numberFormat.format(1.1 * total));
         System.out.println("Payment : " + numberFormat.format(payment));
-        System.err.println("Change : " + numberFormat.format(payment - total));
+        System.err.println("Change : " + numberFormat.format(payment - (1.1 * total)));
+        System.out.println("\n\n>>>>>>>>>>>>> THANK YOU <<<<<<<<<<<<<\n");
     }
 
     // Order Handler Delegate
