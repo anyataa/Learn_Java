@@ -75,8 +75,10 @@ public class Menu implements OrderHandler {
     @Override
     public void generateReceipt(Double total, Double payment, List<String> orderList, List<Order> orderDetail) {
         // TODO Auto-generated method stub
-        System.out.println("\n\n>>>>>>>>>>> RECEIPT <<<<<<<<<<<<<\n");
-        System.out.println("\nOrder Item:");
+        int compare = Double.compare(payment, total);
+
+        System.out.println("\n\n>>>>>>>>>>> RECEIPT <<<<<<<<<<<<<");
+        System.out.println("\nOrdered Item:");
         for (Order orderItem : orderDetail) {
             System.out.println("-" + orderItem.getOrderName() + " : " + orderItem.getOrderPrice() + " x"
                     + orderItem.getOrderQuantity());
@@ -86,7 +88,13 @@ public class Menu implements OrderHandler {
         System.out.println("Tax ( 10% ) : " + numberFormat.format(total * 0.1));
         System.out.println("Total Payment : " + numberFormat.format(1.1 * total));
         System.out.println("Payment : " + numberFormat.format(payment));
-        System.err.println("Change : " + numberFormat.format(payment - (1.1 * total)));
+        if (payment > total) {
+            System.err.println("Change : " + numberFormat.format(payment - (1.1 * total)));
+            System.out.println(compare);
+        } else {
+            System.err.println("PASS" + numberFormat.format(payment - (1.1 * total)));
+        }
+
         System.out.println("\n\n>>>>>>>>>>>>> THANK YOU <<<<<<<<<<<<<\n");
     }
 

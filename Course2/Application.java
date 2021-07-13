@@ -70,21 +70,21 @@ public class Application {
                 userCourse = input.next();
                 System.out.print("Course Room : ");
                 userCourseRoom = input.next();
-                System.out.print("Course Weight : ");
+                System.out.print("Course Credits : ");
                 userSks = input.nextInt();
                 totalSks += userSks;
                 System.out.println();
                 System.out.println("--------------------------------------");
                 user.countCourseForGraduate(userSks);
                 System.out.println();
-                System.out.println("Total Course Weight : " + totalSks);
+                System.out.println("Total Course Credits : " + totalSks);
                 // userCourseTaken = userCourseTaken + " \n " + " - " +
                 // user.inputCourseData(userCourse, userCourseRoom);
                 // System.out.println(userCourseTaken);
                 System.out.println();
                 System.out.println("--------------------------------------");
                 System.out.println();
-                setTakenCourse.add(user.inputCourseData(userCourse, userCourseRoom) + ": " + userSks + "sks");
+                setTakenCourse.add(user.inputCourseData(userCourse, userCourseRoom) + ": " + userSks + "credits");
                 System.out.println("List of Taken Course : ");
                 for (String course : setTakenCourse) {
                     System.out.println(course);

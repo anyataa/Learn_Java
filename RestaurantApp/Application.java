@@ -20,39 +20,46 @@ public class Application {
     Double orderPrice;
     String orderName = "";
     Integer orderQuantity = 0;
+    // unused
     List<Double> totalOrderPrice = new ArrayList<>();
     List<String> totalOrderName = new ArrayList<>();
     Double totalReceipt = 0D;
     Double userPayment = 0D;
     Boolean runApp = true;
     List<Order> orderArray = new ArrayList<>();
-    List<Order> orderArrayDistinct = new ArrayList<>();
+    // List<Order> orderArrayDistinct = new ArrayList<>();
 
-    // Quantity
-
+    // 7
     public void handlePayment() {
         // Payment
         countOrder();
         System.out.println("\n\n>>>>>>>>>>> PAYMENT <<<<<<<<<<<<<");
         showOrder();
-        System.out.println("Total Order : " + numberFormat.format(totalReceipt));
+
+        System.out.println("\nTotal Order : " + numberFormat.format(totalReceipt));
         System.out.println("Tax : " + numberFormat.format(0.1 * totalReceipt));
         System.out.println("Total Payment : " + numberFormat.format(totalReceipt * 1.1));
         System.out.print("Amount : ");
         userPayment = input.nextDouble();
-        if (userPayment < (totalReceipt * 1.1)) {
+        // int compare = Double.compare(userPayment, totalReceipt);
+        if (userPayment < totalReceipt) {
             System.out.println("\n!!!!!!!! Insufficient Amount!!!!!!!!\nPlease Retry Your Payment ");
             handlePayment();
         }
         // Debugging
         System.out.println(userPayment + "-" + totalReceipt);
         System.out.println("Change : " + numberFormat.format(userPayment - totalReceipt));
+
         new Menu().generateReceipt(totalReceipt, userPayment, totalOrderName, orderArray);
+        // System.out.println(orderArray.get(0).getOrderName());
         runApp = false;
         userAnswer = 3;
+        orderArray.clear();
         showMenuOption();
+
     }
 
+    // 6
     public void removeItem() {
         Integer current = 1;
         System.out
@@ -69,12 +76,11 @@ public class Application {
         totalOrderPrice.remove((orderInput.intValue() - 1));
         System.out.println("\nRemaining Item in Your Cart : ");
         showOrder();
-        // System.out.println(totalOrderName);
-        // System.out.println(totalOrderPrice);
         orderAgain();
 
     }
 
+    // 5
     public void showOrder() {
         for (Order item : orderArray) {
             System.out
@@ -84,6 +90,7 @@ public class Application {
 
     }
 
+    // 4
     public void orderAgain() {
         System.out.println("\n>>>>>>>>>>>>>>> Manage Order <<<<<<<<<<<<<<<<< ");
         System.out.println("[1] Order Again \n[2] Remove Item from Cart \n[3] Cancel Order \n[4] Check Out and Pay");
@@ -96,6 +103,7 @@ public class Application {
         }
         if (userAnswer == 3) {
             System.out.println("Order Cancelled");
+            orderArray.clear();
             totalOrderName.clear();
             totalOrderPrice.clear();
             showMenuOption();
@@ -107,6 +115,7 @@ public class Application {
 
     }
 
+    // 3
     public void countOrder() {
         totalReceipt = 0D;
         for (Order orderItem : orderArray) {
@@ -115,41 +124,24 @@ public class Application {
         }
     }
 
+    // 2
     public void inputOrder(String name, Double price, Integer quantity) {
         orderName = name;
         orderPrice = price;
-        // orderQuantity = quantity;
         // Append to the list
         totalOrderName.add(orderName);
         totalOrderPrice.add(orderPrice);
         orderArray.add(new Order(name, price, quantity));
-        // Debugging by printing out
-        // System.out.println(orderName);
-        // System.out.println(orderPrice);
+        // System.out.println(orderArray);
         System.out.println("\nItem in your Cart");
         showOrder();
-        // for (Order orderItem : orderArray) {
-        // System.out.println("- " + orderItem.getOrderName() + " : " +
-        // (orderItem.getOrderPrice() * quantity)
-        // + "\nQuantity : " + orderItem.getOrderQuantity());
-        // System.out.println();
-        // }
-
-        // orderArrayDistinct =
-        // orderArray.stream().distinct().collect(Collectors.toList());
-
-        // System.out.println("DISTINCT");
-        // for (Order item : orderArrayDistinct) {
-        // System.out.println(item.getOrderName());
-        // }
-        // System.out.println(totalOrderName);
-        // System.out.println(totalOrderPrice);
         System.out.println();
         countOrder();
         System.out.println("\nTotal Order : " + numberFormat.format(totalReceipt));
-        // orderAgain();
+        orderAgain();
     }
 
+    // 1
     public void showMenuOption() {
         // Header
         System.out.println("\nWelcome to J-MCD!\n What are you craving for today?\n Option:");
@@ -161,30 +153,37 @@ public class Application {
                 mealSetArray = new Menu().returnMealSetArray();
                 System.out.print("Order: ");
                 orderInput = (input.nextInt() - 1);
+                if (orderInput > mealSetArray.length) {
+                    System.out.println("Unavailable Option! Please choose the valid Option");
+                    System.out.print("Order: ");
+                    orderInput = (input.nextInt() - 1);
+                }
                 System.out.print("Quantity : ");
                 orderQuantity = input.nextInt();
                 inputOrder(mealSetArray[orderInput].getMenuName(), mealSetArray[orderInput].getMenuPrice(),
                         orderQuantity);
-                orderAgain();
+                // orderAgain();
                 // break;
 
             case 2:
                 foodAndBeverageArray = new Menu().returnFoodAndBeverageArray();
                 System.out.println(userAnswer);
-                ;
                 System.out.print("Order: ");
                 orderInput = (input.nextInt() - 1);
+                if (orderInput > foodAndBeverageArray.length) {
+                    System.out.println("Unavailable Option! Please choose the valid Option");
+                    System.out.print("Order: ");
+                    orderInput = (input.nextInt() - 1);
+                }
                 System.out.print("Quantity : ");
                 orderQuantity = input.nextInt();
                 inputOrder(foodAndBeverageArray[orderInput].getFoodName(),
                         foodAndBeverageArray[orderInput].getFoodPrice(), orderQuantity);
-                orderAgain();
-                // break;
 
             case 3:
                 System.out.println("Thank You! See You Next Time!");
                 runApp = false;
-                break;
+                // break;
             }
 
         } while (runApp);
