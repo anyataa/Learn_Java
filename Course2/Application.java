@@ -13,7 +13,7 @@ public class Application {
     String userCourse;
     Integer userSks;
     String userCourseRoom;
-    String userCourseTaken = "Taken Course: ";
+    // String userCourseTaken = "Taken Course: ";
     Integer totalSks = 0;
     Student user = new Student("", 0, "");
     Set<String> setTakenCourse = new HashSet<>();
@@ -80,11 +80,11 @@ public class Application {
                 System.out.println("Total Course Weight : " + totalSks);
                 // userCourseTaken = userCourseTaken + " \n " + " - " +
                 // user.inputCourseData(userCourse, userCourseRoom);
-                System.out.println(userCourseTaken);
+                // System.out.println(userCourseTaken);
                 System.out.println();
                 System.out.println("--------------------------------------");
                 System.out.println();
-                setTakenCourse.add(user.inputCourseData(userCourse, userCourseRoom));
+                setTakenCourse.add(user.inputCourseData(userCourse, userCourseRoom) + ": " + userSks + "sks");
                 System.out.println("List of Taken Course : ");
                 for (String course : setTakenCourse) {
                     System.out.println(course);
