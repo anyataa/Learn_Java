@@ -77,8 +77,9 @@ public class Application {
 
     public void showOrder() {
         for (Order item : orderArray) {
-            System.out.println(
-                    "- " + item.getOrderName() + " : " + item.getOrderPrice() + " x" + item.getOrderQuantity() + "\n");
+            System.out
+                    .println("- " + item.getOrderName() + " : " + item.getOrderPrice() + " x" + item.getOrderQuantity()
+                            + " = " + numberFormat.format(item.getOrderPrice() * item.getOrderQuantity()));
         }
 
     }
@@ -145,7 +146,7 @@ public class Application {
         // System.out.println(totalOrderPrice);
         System.out.println();
         countOrder();
-        System.out.println("\nTotal : " + totalReceipt);
+        System.out.println("\nTotal Order : " + numberFormat.format(totalReceipt));
         // orderAgain();
     }
 
