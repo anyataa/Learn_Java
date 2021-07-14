@@ -1,3 +1,7 @@
 {
-    "java.format.settings.url": "eclipse-formatter.xml"
+    "java.format.settings.url": "eclipse-formatter.xml",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/anyaakbar/Downloads/mysql-connector-java-5.1.49/mysql-connector-java-5.1.49.jar"
+    ]
 }
